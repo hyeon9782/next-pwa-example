@@ -5,8 +5,8 @@ import TodoItem, { Item } from "./TodoItem";
 const ITEMS: Item[] = [
   {
     id: 0,
-    title: "",
-    content: "",
+    title: "빨래하기",
+    content: "섬유 유연제 꼭 넣기",
     status: "진행 전",
     startData: "",
     deadline: "",
@@ -15,8 +15,8 @@ const ITEMS: Item[] = [
   },
   {
     id: 1,
-    title: "",
-    content: "",
+    title: "설거지하기",
+    content: "뽀득뽀득 소리나게",
     status: "진행 전",
     startData: "",
     deadline: "",
@@ -25,8 +25,8 @@ const ITEMS: Item[] = [
   },
   {
     id: 2,
-    title: "",
-    content: "",
+    title: "코딩하기",
+    content: "1일 1커밋 해보자",
     status: "진행 전",
     startData: "",
     deadline: "",
@@ -37,6 +37,15 @@ const ITEMS: Item[] = [
 
 const TodoList = () => {
   const [items, setItems] = useState<Item[]>(ITEMS);
+
+  const appendItem = (item: Item) => {
+    setItems((prevItems) => [...prevItems, item]);
+  };
+
+  const removeItem = (id: number) => {
+    setItems((prevItems) => prevItems.filter((prevItem) => prevItem.id !== id));
+  };
+
   return (
     <div>
       {items.map((item) => (

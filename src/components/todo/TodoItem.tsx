@@ -17,7 +17,7 @@ const TodoItem = ({ item }: Props) => {
   return (
     <div>
       <input type="checkbox" />
-      <input type="text" />
+      <input type="text" value={item.title} />
     </div>
   );
 };
