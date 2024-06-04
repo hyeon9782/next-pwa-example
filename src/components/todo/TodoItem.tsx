@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 export type Item = {
   id: number;
   title: string;
@@ -14,6 +15,7 @@ type Props = {
   item: Item;
 };
 const TodoItem = ({ item }: Props) => {
+  const [itemData, setItemData] = useState(item);
   return (
     <div>
       <input type="checkbox" />

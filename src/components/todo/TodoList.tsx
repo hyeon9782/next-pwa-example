@@ -46,6 +46,8 @@ const TodoList = () => {
     setItems((prevItems) => prevItems.filter((prevItem) => prevItem.id !== id));
   };
 
+  const updateItem = () => {};
+
   return (
     <div>
       {items.map((item) => (
