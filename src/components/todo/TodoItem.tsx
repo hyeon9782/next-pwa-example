@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { Checkbox } from "../ui/checkbox";
+import { Input } from "../ui/input";
 export type Item = {
   id: number;
   title: string;
@@ -17,10 +19,10 @@ type Props = {
 const TodoItem = ({ item }: Props) => {
   const [itemData, setItemData] = useState(item);
   return (
-    <div>
-      <input type="checkbox" />
-      <input type="text" value={item.title} />
-    </div>
+    <li className="flex items-center gap-2">
+      <Checkbox className="w-[35px] h-[35px]" />
+      <Input value={item.title} />
+    </li>
   );
 };
 

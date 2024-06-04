@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import TodoItem, { Item } from "./TodoItem";
+import CreateTodoDialog from "../dialogs/CreateTodoDialog";
 
 const ITEMS: Item[] = [
   {
@@ -49,11 +50,12 @@ const TodoList = () => {
   const updateItem = () => {};
 
   return (
-    <div>
+    <ul className="flex flex-col gap-2">
+      <CreateTodoDialog />
       {items.map((item) => (
         <TodoItem item={item} key={item.id} />
       ))}
-    </div>
+    </ul>
   );
 };
 
